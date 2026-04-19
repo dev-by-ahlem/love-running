@@ -2,9 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
 /*header*/
 header{
-   background-color: lightcoral; 
+   /* Sets the background color to white */
+   background-color:#ffffff; 
 
+   /* Adds padding: 0 (top & bottom), 1rem (left & right spacing) */
+   padding:0 1rem;
+
+   /* Fixes the header in place so it stays visible when scrolling */
+   position:fixed;
+
+   /* Controls stacking order; higher value means it appears above other elements */
+   z-index:99;
+
+   /* Makes the header span the full width of the page */
+   width:100%;
+   /* Adds a shadow to the element:
+   0 → no horizontal shift (left/right)
+   2px → shadow moves 2px downward
+   2px → blur amount (softness of the shadow)
+   #3a3a3a → dark grey color of the shadow */
+   box-shadow: 0 2px 2px #3a3a3a ;
 }
+
 /*main content*/
 main{
     background-color:lightblue;
@@ -87,6 +106,7 @@ footer{
 }
 body{
     font-family: "Lato", sans-serif;
+    
 }
 h1{
     font-family: "oswald", sans-serif;
