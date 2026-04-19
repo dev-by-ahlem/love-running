@@ -1,142 +1,225 @@
-/* Google fonts import */
+/* Google fonts import → loads external fonts (Lato + Oswald) */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
-/*header*/
+
+/* HEADER SECTION */
 header{
-   /* Sets the background color to white */
+
+   /* background-color → sets the header background to white */
    background-color:#ffffff; 
 
-   /* Adds padding: 0 (top & bottom), 1rem (left & right spacing) */
+   /* padding → adds space inside header (top/bottom = 0, left/right = 1rem) */
    padding:0 1rem;
 
-   /* Fixes the header in place so it stays visible when scrolling */
-   position:fixed;
+   /* position: sticky → keeps header visible when scrolling */
+   position:sticky;
 
-   /* Controls stacking order; higher value means it appears above other elements */
+   /* z-index → makes sure header stays above other elements */
    z-index:99;
 
-   /* Makes the header span the full width of the page */
+   /* width → makes header stretch across full screen */
    width:100%;
-   /* Adds a shadow to the element:
-   0 → no horizontal shift (left/right)
-   2px → shadow moves 2px downward
-   2px → blur amount (softness of the shadow)
-   #3a3a3a → dark grey color of the shadow */
+
+   /* box-shadow → adds shadow under header (x, y, blur, color) */
    box-shadow: 0 2px 2px #3a3a3a ;
+
+   /* display: flex → arranges children (logo + nav) in a row */
+   display: flex;
+
+   /* justify-content: space-between → pushes items to far left and right */
+   justify-content: space-between;
+
+   /* align-items: baseline → aligns items based on text baseline */
+   align-items: baseline;
+
+   /* top → needed for sticky positioning (sticks to top of page) */
+   top:0;
 }
+
+/* HEADER LINKS */
 header a {
+
+    /* removes underline from links */
     text-decoration: none;
-    color:inherit
+
+    /* inherits color from parent (keeps design consistent) */
+    color:inherit;
 }
+
+/* MAIN LOGO (h1) */
 h1{
+
+    /* applies Oswald font */
     font-family: "oswald", sans-serif;
+
+    /* makes text uppercase */
     text-transform: uppercase;
+
+    /* spacing between letters */
     letter-spacing: 2px;
+
+    /* sets dark text color */
     color: #252525;
 }
-#menu{
-    font-size:110%;
-    letter-spacing: 4px;
-    list-style-type: none;
 
+/* MENU LIST */
+#menu{
+
+    /* increases text size slightly */
+    font-size:110%;
+
+    /* adds spacing between letters */
+    letter-spacing: 4px;
+
+    /* removes bullet points from list */
+    list-style-type: none;
 }
+
+/* MENU ITEMS */
 #menu>li{
+
+    /* adds spacing between each menu item */
     margin-bottom: 1em;
 }
+
+/* ACTIVE PAGE LINK */
 .active{
+
+    /* adds underline effect for active page */
     border-bottom: 1px solid #3a3a3a;
 }
-/*Navbar styles with dropdown toggle*/
+
+/* NAVIGATION DROPDOWN MENU */
 nav{
+
+   /* positions menu relative to header */
    position:absolute;
+
+   /* sets background color of dropdown */
    background-color:#ffffff; 
-   padding:0 1rem;
-   position:fixed;
+
+   /* adds spacing inside menu */
+   padding: 1rem;
+
+   /* makes menu full width */
    width:100%;
+
+   /* aligns menu to left edge */
    left:0;
+
+   /* hides menu by default */
    display:none;
+
+   /* places menu just below header */
+   top:100%;
+
+   /* ensures menu appears above content */
+   z-index: 100;
 }
-/*main content*/
+
+/* SHOW MENU WHEN CHECKBOX IS CHECKED */
+#nav-toggle:checked ~ nav{
+
+   /* displays menu when clicked */
+   display: block;
+}
+
+/* HIDE CHECKBOX (but still functional) */
+#nav-toggle{
+
+   /* removes checkbox from view but keeps it working */
+   position: absolute;
+
+   /* makes it invisible */
+   opacity: 0;
+}
+
+/* HAMBURGER ICON LABEL */
+.nav-toggle-label{
+
+    /* makes it clickable like a button */
+    cursor: pointer;
+
+    /* increases icon size */
+    font-size: 2rem;
+}
+
+/* MAIN CONTENT AREA */
 main{
+
+    /* sets background color */
     background-color:lightblue;
+
+    /* allows main to fill available space */
+    flex: 1;
 }
-/*footer*/
+
+/* FOOTER */
 footer{
+
+    /* sets footer background color */
     background-color: orange;
+
+    /* removes unwanted spacing */
+    margin: 0;
+
+    /* adds inner spacing */
+    padding: 20px;
 }
-/*Oswald: CSS class for a variable style*/
-/* <weight>: Use a value from 200 to 700*/
-/*<uniquifier>: Use a unique and descriptive class name*/
 
-
+/* OSWALD FONT CLASS */
 .oswald-heading {
+
+  /* sets Oswald font */
   font-family: "Oswald", sans-serif;
+
+  /* improves font rendering */
   font-optical-sizing: auto;
-  font-weight: 400; /* choose 200–700 */
-  font-style: normal;
-}
 
-/*Lato: CSS classes*/
-.lato-thin {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.lato-light {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.lato-regular {
-  font-family: "Lato", sans-serif;
+  /* font weight */
   font-weight: 400;
+
+  /* normal style (not italic) */
   font-style: normal;
 }
 
-.lato-bold {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
+/* LATO FONT CLASSES */
+.lato-thin { font-family: "Lato", sans-serif; font-weight: 100; font-style: normal; }
+.lato-light { font-family: "Lato", sans-serif; font-weight: 300; font-style: normal; }
+.lato-regular { font-family: "Lato", sans-serif; font-weight: 400; font-style: normal; }
+.lato-bold { font-family: "Lato", sans-serif; font-weight: 700; font-style: normal; }
+.lato-black { font-family: "Lato", sans-serif; font-weight: 900; font-style: normal; }
 
-.lato-black {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
+.lato-thin-italic { font-family: "Lato", sans-serif; font-weight: 100; font-style: italic; }
+.lato-light-italic { font-family: "Lato", sans-serif; font-weight: 300; font-style: italic; }
+.lato-regular-italic { font-family: "Lato", sans-serif; font-weight: 400; font-style: italic; }
+.lato-bold-italic { font-family: "Lato", sans-serif; font-weight: 700; font-style: italic; }
+.lato-black-italic { font-family: "Lato", sans-serif; font-weight: 900; font-style: italic; }
 
-.lato-thin-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.lato-light-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.lato-regular-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.lato-bold-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.lato-black-italic {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
+/* GLOBAL BODY STYLES */
 body{
+
+    /* sets default font */
     font-family: "Lato", sans-serif;
-    
+
+    /* enables flex layout */
+    display: flex;
+
+    /* stacks elements vertically */
+    flex-direction: column;
+
+    /* makes page full height */
+    min-height: 100vh;  
 }
 
+/* GLOBAL RESET (removes browser default spacing) */
+*{
+
+    /* removes default margins */
+    margin: 0;
+
+    /* removes default padding */
+    padding: 0;
+
+    /* makes sizing easier and more consistent */
+    box-sizing: border-box;
+}
