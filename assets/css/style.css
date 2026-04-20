@@ -165,6 +165,54 @@ footer{
     /* adds inner spacing */
     padding: 20px;
 }
+/* Media query → applies styles only on screens 768px or wider (tablets and larger) */
+@media screen and (min-width:768px) {
+
+    /* Targets the navigation bar inside this screen size */
+    nav{
+
+        /* display: block → makes nav behave like a normal block element 
+           (usually used to show it normally on larger screens) */
+        display:block;
+
+        /* position: relative → allows child elements (like dropdowns) 
+           to be positioned relative to the nav */
+        position:relative;
+
+        /* box-shadow: none → removes any shadow (clean look on bigger screens) */
+        box-shadow:none;
+
+        /* width: fit-content → nav takes only the space needed by its content 
+           (instead of full width like on mobile) */
+        width: fit-content;
+
+        /* padding-right: 1rem → adds space inside the nav on the right side */
+        padding-right: 1rem;
+    }
+    /* Targets the element with id="menu" (your navigation list) */
+#menu{
+
+    /* display: flex → turns the menu into a flex container 
+       so all list items (li) are arranged in a row (horizontal menu) */
+    display:flex;
+}
+
+/* Targets ONLY direct <li> children inside #menu */
+#menu > li{
+
+    /* padding-left: 1rem → adds space to the left of each menu item 
+       (creates spacing between menu links) */
+    padding-left: 1rem;
+}
+
+/* Targets the hamburger icon label (used for mobile menu toggle) */
+.nav-toggle-label{
+
+    /* display: none → hides the hamburger icon 
+       (because on larger screens you show full menu instead) */
+    display: none;
+}
+}
 
 /* OSWALD FONT CLASS */
 .oswald-heading {
