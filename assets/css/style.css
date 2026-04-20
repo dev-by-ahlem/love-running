@@ -1,55 +1,79 @@
-/* Google fonts import → loads external fonts (Lato + Oswald) */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+/* Google fonts import → loads external fonts (Lato and Oswald from Google) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Oswald:wght@200..700&display=swap');
 
-/* HEADER SECTION */
-header{
+/* RESET → removes default browser spacing */
+*{
+    /* removes space outside elements */
+    margin: 0;
 
-   /* background-color → sets the header background to white */
-   background-color:#ffffff; 
+    /* removes space inside elements */
+    padding: 0;
 
-   /* padding → adds space inside header (top/bottom = 0, left/right = 1rem) */
-   padding:0 1rem;
-
-   /* position: sticky → keeps header visible when scrolling */
-   position:sticky;
-
-   /* z-index → makes sure header stays above other elements */
-   z-index:99;
-
-   /* width → makes header stretch across full screen */
-   width:100%;
-
-   /* box-shadow → adds shadow under header (x, y, blur, color) */
-   box-shadow: 0 2px 2px #3a3a3a ;
-
-   /* display: flex → arranges children (logo + nav) in a row */
-   display: flex;
-
-   /* justify-content: space-between → pushes items to far left and right */
-   justify-content: space-between;
-
-   /* align-items: baseline → aligns items based on text baseline */
-   align-items: baseline;
-
-   /* top → needed for sticky positioning (sticks to top of page) */
-   top:0;
+    /* makes width/height calculations easier */
+    box-sizing: border-box;
 }
 
-/* HEADER LINKS */
-header a {
+/* BODY → main page styling */
+body{
+    /* sets default font for whole page */
+    font-family: "Lato", sans-serif;
 
+    /* enables flex layout */
+    display: flex;
+
+    /* stacks elements vertically (header, main, footer) */
+    flex-direction: column;
+
+    /* makes page at least full screen height */
+    min-height: 100vh;
+}
+
+/* HEADER → top navigation area */
+header{
+    /* sets background color to white */
+    background-color: #ffffff;
+
+    /* adds spacing inside header (left/right only) */
+    padding: 0 1rem;
+
+    /* sticks header to top when scrolling */
+    position: sticky;
+
+    /* keeps header at top */
+    top: 0;
+
+    /* ensures header stays above other elements */
+    z-index: 99;
+
+    /* makes header full width */
+    width: 100%;
+
+    /* adds shadow under header */
+    box-shadow: 0 2px 2px #3a3a3a;
+
+    /* puts logo and nav in one row */
+    display: flex;
+
+    /* pushes logo left and menu right */
+    justify-content: space-between;
+
+    /* aligns items vertically */
+    align-items: baseline;
+}
+
+/* LINKS inside header */
+header a{
     /* removes underline from links */
     text-decoration: none;
 
-    /* inherits color from parent (keeps design consistent) */
-    color:inherit;
+    /* inherits color from parent */
+    color: inherit;
 }
 
-/* MAIN LOGO (h1) */
+/* LOGO (h1) */
 h1{
-
-    /* applies Oswald font */
-    font-family: "oswald", sans-serif;
+    /* uses Oswald font */
+    font-family: "Oswald", sans-serif;
 
     /* makes text uppercase */
     text-transform: uppercase;
@@ -57,224 +81,182 @@ h1{
     /* spacing between letters */
     letter-spacing: 2px;
 
-    /* sets dark text color */
+    /* dark text color */
     color: #252525;
 }
 
-/* MENU LIST */
+/* MENU list */
 #menu{
+    /* increases text size */
+    font-size: 110%;
 
-    /* increases text size slightly */
-    font-size:110%;
-
-    /* adds spacing between letters */
+    /* spacing between letters */
     letter-spacing: 4px;
 
-    /* removes bullet points from list */
-    list-style-type: none;
+    /* removes bullet points */
+    list-style: none;
 }
 
 /* MENU ITEMS */
-#menu>li{
-
-    /* adds spacing between each menu item */
+#menu > li{
+    /* space between items */
     margin-bottom: 1em;
 }
 
 /* ACTIVE PAGE LINK */
 .active{
-
-    /* adds underline effect for active page */
+    /* underline active page */
     border-bottom: 1px solid #3a3a3a;
 }
 
-/* NAVIGATION DROPDOWN MENU */
+/* NAVIGATION MENU (mobile) */
 nav{
+    /* positions menu below header */
+    position: absolute;
 
-   /* positions menu relative to header */
-   position:absolute;
+    /* white background */
+    background-color: #ffffff;
 
-   /* sets background color of dropdown */
-   background-color:#ffffff; 
+    /* full width dropdown */
+    width: 100%;
 
-   /* adds spacing inside menu */
-   padding: 1rem;
+    /* align left edge */
+    left: 0;
 
-   /* makes menu full width */
-   width:100%;
+    /* place below header */
+    top: 100%;
 
-   /* aligns menu to left edge */
-   left:0;
+    /* inner spacing */
+    padding: 1rem;
 
-   /* hides menu by default */
-   display:none;
+    /* hidden by default */
+    display: none;
 
-   /* places menu just below header */
-   top:100%;
-
-   /* ensures menu appears above content */
-   z-index: 100;
+    /* appears above content */
+    z-index: 100;
 }
 
-/* SHOW MENU WHEN CHECKBOX IS CHECKED */
+/* SHOW MENU WHEN CHECKBOX IS CLICKED */
 #nav-toggle:checked ~ nav{
-
-   /* displays menu when clicked */
-   display: block;
+    /* shows menu */
+    display: block;
 }
 
-/* HIDE CHECKBOX (but still functional) */
+/* HIDE CHECKBOX */
 #nav-toggle{
+    /* removes it from layout */
+    position: absolute;
 
-   /* removes checkbox from view but keeps it working */
-   position: absolute;
-
-   /* makes it invisible */
-   opacity: 0;
+    /* makes it invisible */
+    opacity: 0;
 }
 
-/* HAMBURGER ICON LABEL */
+/* HAMBURGER MENU ICON */
 .nav-toggle-label{
-
-    /* makes it clickable like a button */
-    cursor: pointer;
-
-    /* increases icon size */
+    /* makes icon bigger */
     font-size: 2rem;
+
+    /* makes it clickable */
+    cursor: pointer;
 }
 
-/* MAIN CONTENT AREA */
+/* MAIN CONTENT */
 main{
+    /* background color */
+    background-color: lightblue;
 
-    /* sets background color */
-    background-color:lightblue;
-
-    /* allows main to fill available space */
+    /* takes remaining space */
     flex: 1;
 }
 
 /* FOOTER */
 footer{
-
-    /* sets footer background color */
+    /* orange background */
     background-color: orange;
 
-    /* removes unwanted spacing */
-    margin: 0;
-
-    /* adds inner spacing */
+    /* inner spacing */
     padding: 20px;
+
+    /* removes default margin */
+    margin: 0;
 }
-/* Media query → applies styles only on screens 768px or wider (tablets and larger) */
-@media screen and (min-width:768px) {
 
-    /* Targets the navigation bar inside this screen size */
+/* TABLET AND UP */
+@media screen and (min-width:768px){
+
+    /* NAV becomes visible normally */
     nav{
+        display: block;
 
-        /* display: block → makes nav behave like a normal block element 
-           (usually used to show it normally on larger screens) */
-        display:block;
+        /* normal positioning */
+        position: relative;
 
-        /* position: relative → allows child elements (like dropdowns) 
-           to be positioned relative to the nav */
-        position:relative;
+        /* removes shadow */
+        box-shadow: none;
 
-        /* box-shadow: none → removes any shadow (clean look on bigger screens) */
-        box-shadow:none;
-
-        /* width: fit-content → nav takes only the space needed by its content 
-           (instead of full width like on mobile) */
+        /* fits content size */
         width: fit-content;
 
-        /* padding-right: 1rem → adds space inside the nav on the right side */
+        /* spacing right */
         padding-right: 1rem;
     }
-    /* Targets the element with id="menu" (your navigation list) */
-#menu{
 
-    /* display: flex → turns the menu into a flex container 
-       so all list items (li) are arranged in a row (horizontal menu) */
-    display:flex;
+    /* menu becomes horizontal */
+    #menu{
+        display: flex;
+    }
+
+    /* spacing between items */
+    #menu > li{
+        padding-left: 1rem;
+
+        /* remove bottom spacing */
+        margin-bottom: 0;
+    }
+
+    /* hide hamburger icon */
+    .nav-toggle-label{
+        display: none;
+    }
+
+    /* bigger logo */
+    #logo{
+        font-size: 280%;
+
+        /* align vertically */
+        line-height: 75px;
+
+        /* spacing */
+        margin: 0 0.5rem;
+    }
 }
 
-/* Targets ONLY direct <li> children inside #menu */
-#menu > li{
+/* DESKTOP HOVER EFFECT */
+@media screen and (min-width:992px){
 
-    /* padding-left: 1rem → adds space to the left of each menu item 
-       (creates spacing between menu links) */
-    padding-left: 1rem;
+    /* make links ready for hover effect */
+    #menu a{
+        display: inline-block;
+        padding: 0.5rem 0;
+        text-decoration: none;
+    }
+
+    /* hover effect */
+    #menu a:hover{
+        border-bottom: 2px solid #3a3a3a;
+    }
 }
 
-/* Targets the hamburger icon label (used for mobile menu toggle) */
-.nav-toggle-label{
-
-    /* display: none → hides the hamburger icon 
-       (because on larger screens you show full menu instead) */
-    display: none;
-}
-#logo{
-    font-size:280%;
-    line-height: 75px;
-    margin: 0 0.5rem;
-}
-/*Main content */
-
+/* FONT HELPERS */
+.oswald-heading{
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-/* OSWALD FONT CLASS */
-.oswald-heading {
-
-  /* sets Oswald font */
-  font-family: "Oswald", sans-serif;
-
-  /* improves font rendering */
-  font-optical-sizing: auto;
-
-  /* font weight */
-  font-weight: 400;
-
-  /* normal style (not italic) */
-  font-style: normal;
-}
-
-/* LATO FONT CLASSES */
-.lato-thin { font-family: "Lato", sans-serif; font-weight: 100; font-style: normal; }
-.lato-light { font-family: "Lato", sans-serif; font-weight: 300; font-style: normal; }
-.lato-regular { font-family: "Lato", sans-serif; font-weight: 400; font-style: normal; }
-.lato-bold { font-family: "Lato", sans-serif; font-weight: 700; font-style: normal; }
-.lato-black { font-family: "Lato", sans-serif; font-weight: 900; font-style: normal; }
-
-.lato-thin-italic { font-family: "Lato", sans-serif; font-weight: 100; font-style: italic; }
-.lato-light-italic { font-family: "Lato", sans-serif; font-weight: 300; font-style: italic; }
-.lato-regular-italic { font-family: "Lato", sans-serif; font-weight: 400; font-style: italic; }
-.lato-bold-italic { font-family: "Lato", sans-serif; font-weight: 700; font-style: italic; }
-.lato-black-italic { font-family: "Lato", sans-serif; font-weight: 900; font-style: italic; }
-
-/* GLOBAL BODY STYLES */
-body{
-
-    /* sets default font */
-    font-family: "Lato", sans-serif;
-
-    /* enables flex layout */
-    display: flex;
-
-    /* stacks elements vertically */
-    flex-direction: column;
-
-    /* makes page full height */
-    min-height: 100vh;  
-}
-
-/* GLOBAL RESET (removes browser default spacing) */
-*{
-
-    /* removes default margins */
-    margin: 0;
-
-    /* removes default padding */
-    padding: 0;
-
-    /* makes sizing easier and more consistent */
-    box-sizing: border-box;
-}
+/* LATO FONT WEIGHTS */
+.lato-thin { font-weight: 100; }
+.lato-light { font-weight: 300; }
+.lato-regular { font-weight: 400; }
+.lato-bold { font-weight: 700; }
+.lato-black { font-weight: 900; }
