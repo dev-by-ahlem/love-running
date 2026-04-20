@@ -212,6 +212,13 @@ footer{
        (because on larger screens you show full menu instead) */
     display: none;
 }
+#logo{
+    font-size:280%;
+    line-height: 75px;
+    margin: 0 0.5rem;
+}
+/*Main content */
+
 }
 
 /* OSWALD FONT CLASS */
