@@ -1,176 +1,196 @@
-/* Import fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Oswald:wght@200..700&display=swap');
+/* This loads the fonts from Google so you can use them */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Remove default browser spacing and make sizing easier */
-*{
-    margin: 0;        /* remove outside spacing */
-    padding: 0;       /* remove inside spacing */
-    box-sizing: border-box; /* include padding in width/height */
+/* This applies basic rules to ALL elements */
+* {
+    padding: 0;              /* Remove all inside spacing */
+    margin: 0;               /* Remove all outside spacing */
+    box-sizing: border-box;  /* Make sizing easier to control */
 }
 
-/* Style the whole page */
-body{
-    font-family: "Lato", sans-serif; /* set default font */
+/* These are general page styles */
+body {
+    min-height: 100vh;       /* Make the page at least as tall as the screen */
+    display: flex;           /* Use flexbox layout */
+    flex-direction: column;  /* Stack items from top to bottom */
+    color: #3a3a3a;          /* Set default text color */
+    font-family: 'Lato', sans-serif; /* Set default font */
 }
 
-/* Style the header area */
-header{
-    background-color: #ffffff; /* white background */
-    padding: 0 1rem;           /* space left and right */
-    position: sticky;          /* stays at top when scrolling */
-    top: 0;                    /* stick to top */
-    z-index: 99;               /* stay above other elements */
-    width: 100%;               /* full width */
-    box-shadow: 0 2px 2px #3a3a3a; /* small shadow under header */
-    display: flex;             /* place items in a row */
-    justify-content: space-between; /* push logo left, menu right */
-    align-items: baseline;     /* align items nicely */
+/* These styles apply to all headings */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif; /* Use Oswald font */
+    text-transform: uppercase;         /* Make letters uppercase */
+    letter-spacing: 2px;               /* Add space between letters */
+    color: #252525;                    /* Dark color for headings */
 }
 
-/* Remove underline from header links */
-header a{
-    text-decoration: none; /* no underline */
-    color: inherit;        /* same color as parent */
+/* This styles the header at the top */
+header {
+    background-color: #ffffff; /* White background */
+    padding: 0 1rem;           /* Space on left and right */
+    position: fixed;           /* Keep header stuck to the top */
+    z-index: 99;               /* Make sure it stays above everything */
+    width: 100%;               /* Make header full width */
+    box-shadow: 0 2px 2px #3a3a3a; /* Add a small shadow */
+    display: flex;             /* Put items in a row */
+    justify-content: space-between; /* Spread items apart */
+    align-items: baseline;     /* Align items nicely */
 }
 
-/* Style the main logo text */
-h1{
-    font-family: "Oswald", sans-serif; /* use Oswald font */
-    text-transform: uppercase;         /* all caps */
-    letter-spacing: 2px;               /* spacing between letters */
-    color: #252525;                    /* dark color */
+/* Style links inside the header */
+header a {
+    text-decoration: none; /* Remove underline */
+    color: inherit;        /* Use same color as parent */
 }
 
 /* Style the menu list */
-#menu{
-    font-size: 110%;       /* slightly bigger text */
-    letter-spacing: 4px;   /* spaced-out letters */
-    list-style: none;      /* remove bullets */
+#menu {
+    font-size: 110%;       /* Make text a bit bigger */
+    letter-spacing: 4px;   /* Add space between letters */
+    list-style-type: none; /* Remove bullet points */
 }
 
-/* Add space between menu items */
-#menu > li{
-    margin-bottom: 1em; /* space below each item */
+/* Add space under each menu item */
+#menu > li {
+    margin-bottom: 1em; /* Add bottom space */
 }
 
-/* Highlight the active page */
-.active{
-    border-bottom: 1px solid #3a3a3a; /* underline */
+/* Style the active page link */
+.active {
+    border-bottom: 1px solid #3a3a3a; /* Add underline */
 }
 
-/* Mobile navigation menu */
-nav{
-    position: absolute;   /* position under header */
-    background-color: #ffffff; /* white background */
-    width: 100%;          /* full width */
-    left: 0;              /* align left */
-    top: 100%;            /* place below header */
-    padding: 1rem;        /* inner spacing */
-    display: none;        /* hidden by default */
-    z-index: 100;         /* above content */
+/* Style the navigation menu (mobile dropdown) */
+nav {
+    position: absolute;        /* Position under header */
+    background-color: #ffffff; /* White background */
+    width: 100%;               /* Full width */
+    left: 0;                   /* Align to left */
+    padding: 0 1rem;           /* Add side padding */
+    box-shadow: 0 2px 2px #3a3a3a; /* Add shadow */
+    display: none;             /* Hide by default */
+    top: 100%;                 /* Place under header */
 }
 
-/* Show menu when checkbox is checked */
-#nav-toggle:checked ~ nav{
-    display: block; /* show menu */
+/* Show the menu when the checkbox is checked */
+#nav-toggle:checked~nav {
+    display: block; /* Show menu */
 }
 
 /* Hide the checkbox */
-#nav-toggle{
-    position: absolute; /* remove from layout */
-    opacity: 0;         /* make invisible */
+#nav-toggle {
+    display: none; /* Make checkbox invisible */
 }
 
 /* Style the hamburger icon */
-.nav-toggle-label{
-    font-size: 2rem; /* big icon */
-    cursor: pointer; /* clickable */
+.nav-toggle-label {
+    font-size: 2rem; /* Make icon big */
 }
 
 /* Style the main content area */
-main{
-    /* EMPTY ON PURPOSE — prevents unwanted space */
+main {
+    flex: 1 0 auto;   /* Let main grow and push footer down */
+    margin-top: 47px; /* Add space so content doesn't hide behind header */
 }
 
 /* Style the hero image section */
-#hero{
-    height: 600px; /* height of hero image */
-    width: 100%;   /* full width */
-    background:url("../images/hero-image.webp") no-repeat center center/cover;
-    /* set hero image, centered, covering area */
+#hero {
+    height: 600px; /* Set height */
+    width: 100%;   /* Full width */
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    /* Add hero image and make it cover the area */
+    position: relative; /* Allow text box to be placed inside */
 }
 
-/* Style the footer social icons */
-#social-networks{
-    text-align: center;         /* center icons */
-    padding: 20px 0;            /* space above/below */
-    display: flex;              /* place icons in a row */
-    justify-content: space-evenly; /* even spacing */
-    list-style-type:none;       /* remove bullets */
+/* Style the text box on top of the hero image */
+#cover-text {
+    background-color: rgba(241, 109, 107, .7); /* Pink box with transparency */
+    font-size: 130%;                           /* Make text bigger */
+    position: absolute;                        /* Position inside hero */
+    bottom: 30px;                              /* Place near bottom */
+    width: 80%;                                 /* Set width */
+    min-height: 200px;                         /* Minimum height */
+    padding-top: 40px;                         /* Space at top */
+    padding-left: 10px;                        /* Space on left */
+}
+
+/* Make hero text white */
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff; /* White text */
+}
+
+/* Style the footer icons */
+#social-networks {
+    text-align: center;         /* Center icons */
+    padding: 20px 0;            /* Add top and bottom space */
+    display: flex;              /* Put icons in a row */
+    justify-content: space-evenly; /* Spread icons evenly */
+    list-style-type: none;      /* Remove bullets */
 }
 
 /* Style each social icon */
-#social-networks i{
-    font-size: 160%; /* bigger icons */
-    padding:5%;      /* space around icons */
-    color:#3a3a3a;   /* dark color */
+#social-networks i {
+    font-size: 160%; /* Make icons bigger */
+    padding: 5%;     /* Add space around icons */
+    color: #3a3a3a;  /* Dark color */
 }
 
-/* Tablet layout (768px and up) */
-@media screen and (min-width:768px){
+/* Tablet screens and bigger */
+@media screen and (min-width: 768px) {
 
-    nav{
-        display: block;      /* show menu normally */
-        position: relative;  /* normal position */
-        box-shadow: none;    /* remove shadow */
-        width: fit-content;  /* only as wide as needed */
-        padding-right: 1rem; /* space on right */
+    /* Make nav always visible */
+    nav {
+        display: block;      /* Show menu */
+        position: relative;  /* Normal position */
+        box-shadow: none;    /* Remove shadow */
+        width: fit-content;  /* Only as wide as needed */
+        padding-right: 1rem; /* Add right space */
     }
 
-    #menu{
-        display: flex; /* horizontal menu */
+    /* Make menu horizontal */
+    #menu {
+        display: flex; /* Row layout */
     }
 
-    #menu > li{
-        padding-left: 1rem; /* space between items */
-        margin-bottom: 0;   /* remove bottom space */
+    /* Add spacing between menu items */
+    #menu > li {
+        padding-left: 1rem; /* Add left space */
     }
 
-    .nav-toggle-label{
-        display: none; /* hide hamburger icon */
+    /* Hide hamburger icon */
+    .nav-toggle-label {
+        display: none; /* Hide icon */
     }
 
-    #logo{
-        font-size: 280%; /* bigger logo */
-        line-height: 75px; /* align vertically */
-        margin: 0 0.5rem; /* small spacing */
+    /* Make logo bigger */
+    #logo {
+        font-size: 280%; /* Bigger text */
+        line-height: 75px; /* Align vertically */
+        margin: 0 0.5rem; /* Add small margin */
+    }
+
+    /* Add more space under header */
+    main {
+        margin-top: 79px; /* Bigger top margin */
+    }
+    /*hero*/
+    #cover-text{
+        width:300px;
+        right: 50px;
+    }
+
+    /* Move hero text box to the right */
+    #cover-text {
+        width: 300px; /* Set width */
+        right: 50px;  /* Move to right */
     }
 }
 
-/* Desktop hover effects (992px and up) */
-@media screen and (min-width:992px){
+/* Desktop screens */
+@media screen and (min-width: 992px) {
 
-    #menu a{
-        display: inline-block; /* allow padding */
-        padding: 0.5rem 0;     /* space around text */
-        text-decoration: none; /* no underline */
-    }
-
+    /* Add hover underline effect */
     #menu a:hover{
-        border-bottom: 2px solid #3a3a3a; /* underline on hover */
-    }
-}
-
-/* Helper classes for Oswald font */
-.oswald-heading{
-    font-family: "Oswald", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* Helper classes for Lato font weights */
-.lato-thin { font-weight: 100; }
-.lato-light { font-weight: 300; }
-.lato-regular { font-weight: 400; }
-.lato-bold { font-weight: 700; }
-.lato-black { font-weight: 900; }
+        border-bottom: 1px solid #3a3a3a; /* Underline on hover */
+    }}
