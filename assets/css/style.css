@@ -1,266 +1,174 @@
-/* Google fonts import → loads external fonts (Lato and Oswald from Google) */
+/* Import fonts from Google */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Oswald:wght@200..700&display=swap');
 
-/* RESET → removes default browser spacing */
+/* Remove default browser spacing and make sizing easier */
 *{
-    /* removes space outside elements */
-    margin: 0;
-
-    /* removes space inside elements */
-    padding: 0;
-
-    /* makes width/height calculations easier */
-    box-sizing: border-box;
+    margin: 0;        /* remove outside spacing */
+    padding: 0;       /* remove inside spacing */
+    box-sizing: border-box; /* include padding in width/height */
 }
 
-/* BODY → main page styling */
+/* Style the whole page */
 body{
-    /* sets default font for whole page */
-    font-family: "Lato", sans-serif;
-
-    /* enables flex layout */
-    display: flex;
-
-    /* stacks elements vertically (header, main, footer) */
-    flex-direction: column;
-
-    /* makes page at least full screen height */
-    min-height: 100vh;
+    font-family: "Lato", sans-serif; /* set default font */
 }
 
-/* HEADER → top navigation area */
+/* Style the header area */
 header{
-    /* sets background color to white */
-    background-color: #ffffff;
-
-    /* adds spacing inside header (left/right only) */
-    padding: 0 1rem;
-
-    /* sticks header to top when scrolling */
-    position: sticky;
-
-    /* keeps header at top */
-    top: 0;
-
-    /* ensures header stays above other elements */
-    z-index: 99;
-
-    /* makes header full width */
-    width: 100%;
-
-    /* adds shadow under header */
-    box-shadow: 0 2px 2px #3a3a3a;
-
-    /* puts logo and nav in one row */
-    display: flex;
-
-    /* pushes logo left and menu right */
-    justify-content: space-between;
-
-    /* aligns items vertically */
-    align-items: baseline;
+    background-color: #ffffff; /* white background */
+    padding: 0 1rem;           /* space left and right */
+    position: sticky;          /* stays at top when scrolling */
+    top: 0;                    /* stick to top */
+    z-index: 99;               /* stay above other elements */
+    width: 100%;               /* full width */
+    box-shadow: 0 2px 2px #3a3a3a; /* small shadow under header */
+    display: flex;             /* place items in a row */
+    justify-content: space-between; /* push logo left, menu right */
+    align-items: baseline;     /* align items nicely */
 }
 
-/* LINKS inside header */
+/* Remove underline from header links */
 header a{
-    /* removes underline from links */
-    text-decoration: none;
-
-    /* inherits color from parent */
-    color: inherit;
+    text-decoration: none; /* no underline */
+    color: inherit;        /* same color as parent */
 }
 
-/* LOGO (h1) */
+/* Style the main logo text */
 h1{
-    /* uses Oswald font */
-    font-family: "Oswald", sans-serif;
-
-    /* makes text uppercase */
-    text-transform: uppercase;
-
-    /* spacing between letters */
-    letter-spacing: 2px;
-
-    /* dark text color */
-    color: #252525;
+    font-family: "Oswald", sans-serif; /* use Oswald font */
+    text-transform: uppercase;         /* all caps */
+    letter-spacing: 2px;               /* spacing between letters */
+    color: #252525;                    /* dark color */
 }
 
-/* MENU list */
+/* Style the menu list */
 #menu{
-    /* increases text size */
-    font-size: 110%;
-
-    /* spacing between letters */
-    letter-spacing: 4px;
-
-    /* removes bullet points */
-    list-style: none;
+    font-size: 110%;       /* slightly bigger text */
+    letter-spacing: 4px;   /* spaced-out letters */
+    list-style: none;      /* remove bullets */
 }
 
-/* MENU ITEMS */
+/* Add space between menu items */
 #menu > li{
-    /* space between items */
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* space below each item */
 }
 
-/* ACTIVE PAGE LINK */
+/* Highlight the active page */
 .active{
-    /* underline active page */
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a; /* underline */
 }
 
-/* NAVIGATION MENU (mobile) */
+/* Mobile navigation menu */
 nav{
-    /* positions menu below header */
-    position: absolute;
-
-    /* white background */
-    background-color: #ffffff;
-
-    /* full width dropdown */
-    width: 100%;
-
-    /* align left edge */
-    left: 0;
-
-    /* place below header */
-    top: 100%;
-
-    /* inner spacing */
-    padding: 1rem;
-
-    /* hidden by default */
-    display: none;
-
-    /* appears above content */
-    z-index: 100;
+    position: absolute;   /* position under header */
+    background-color: #ffffff; /* white background */
+    width: 100%;          /* full width */
+    left: 0;              /* align left */
+    top: 100%;            /* place below header */
+    padding: 1rem;        /* inner spacing */
+    display: none;        /* hidden by default */
+    z-index: 100;         /* above content */
 }
 
-/* SHOW MENU WHEN CHECKBOX IS CLICKED */
+/* Show menu when checkbox is checked */
 #nav-toggle:checked ~ nav{
-    /* shows menu */
-    display: block;
+    display: block; /* show menu */
 }
 
-/* HIDE CHECKBOX */
+/* Hide the checkbox */
 #nav-toggle{
-    /* removes it from layout */
-    position: absolute;
-
-    /* makes it invisible */
-    opacity: 0;
+    position: absolute; /* remove from layout */
+    opacity: 0;         /* make invisible */
 }
 
-/* HAMBURGER MENU ICON */
+/* Style the hamburger icon */
 .nav-toggle-label{
-    /* makes icon bigger */
-    font-size: 2rem;
-
-    /* makes it clickable */
-    cursor: pointer;
+    font-size: 2rem; /* big icon */
+    cursor: pointer; /* clickable */
 }
 
-/* MAIN CONTENT */
+/* Style the main content area */
 main{
-    /* background color */
-    background-color: lightblue;
-
-    /* takes remaining space */
-    flex: 1;
+    /* EMPTY ON PURPOSE — prevents unwanted space */
 }
 
-/* FOOTER */
+/* Style the hero image section */
+#hero{
+    height: 600px; /* height of hero image */
+    width: 100%;   /* full width */
+    background:url("../images/hero-image.webp") no-repeat center center/cover;
+    /* set hero image, centered, covering area */
+}
+
+/* Style the footer social icons */
 #social-networks{
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type:none;
-
+    text-align: center;         /* center icons */
+    padding: 20px 0;            /* space above/below */
+    display: flex;              /* place icons in a row */
+    justify-content: space-evenly; /* even spacing */
+    list-style-type:none;       /* remove bullets */
 }
+
+/* Style each social icon */
 #social-networks i{
- font-size: 160%;
- padding:5%;
- color:#3a3a3a
-
-
+    font-size: 160%; /* bigger icons */
+    padding:5%;      /* space around icons */
+    color:#3a3a3a;   /* dark color */
 }
 
-
-/* TABLET AND UP */
+/* Tablet layout (768px and up) */
 @media screen and (min-width:768px){
 
-    /* NAV becomes visible normally */
     nav{
-        display: block;
-
-        /* normal positioning */
-        position: relative;
-
-        /* removes shadow */
-        box-shadow: none;
-
-        /* fits content size */
-        width: fit-content;
-
-        /* spacing right */
-        padding-right: 1rem;
+        display: block;      /* show menu normally */
+        position: relative;  /* normal position */
+        box-shadow: none;    /* remove shadow */
+        width: fit-content;  /* only as wide as needed */
+        padding-right: 1rem; /* space on right */
     }
 
-    /* menu becomes horizontal */
     #menu{
-        display: flex;
+        display: flex; /* horizontal menu */
     }
 
-    /* spacing between items */
     #menu > li{
-        padding-left: 1rem;
-
-        /* remove bottom spacing */
-        margin-bottom: 0;
+        padding-left: 1rem; /* space between items */
+        margin-bottom: 0;   /* remove bottom space */
     }
 
-    /* hide hamburger icon */
     .nav-toggle-label{
-        display: none;
+        display: none; /* hide hamburger icon */
     }
 
-    /* bigger logo */
     #logo{
-        font-size: 280%;
-
-        /* align vertically */
-        line-height: 75px;
-
-        /* spacing */
-        margin: 0 0.5rem;
+        font-size: 280%; /* bigger logo */
+        line-height: 75px; /* align vertically */
+        margin: 0 0.5rem; /* small spacing */
     }
 }
 
-/* DESKTOP HOVER EFFECT */
+/* Desktop hover effects (992px and up) */
 @media screen and (min-width:992px){
 
-    /* make links ready for hover effect */
     #menu a{
-        display: inline-block;
-        padding: 0.5rem 0;
-        text-decoration: none;
+        display: inline-block; /* allow padding */
+        padding: 0.5rem 0;     /* space around text */
+        text-decoration: none; /* no underline */
     }
 
-    /* hover effect */
     #menu a:hover{
-        border-bottom: 2px solid #3a3a3a;
+        border-bottom: 2px solid #3a3a3a; /* underline on hover */
     }
 }
 
-/* FONT HELPERS */
+/* Helper classes for Oswald font */
 .oswald-heading{
     font-family: "Oswald", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* LATO FONT WEIGHTS */
+/* Helper classes for Lato font weights */
 .lato-thin { font-weight: 100; }
 .lato-light { font-weight: 300; }
 .lato-regular { font-weight: 400; }
