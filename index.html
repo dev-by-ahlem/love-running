@@ -1,157 +1,116 @@
-<!-- This tells the browser this is an HTML5 document -->
 <!DOCTYPE html>
-
-<!-- This sets the language of the page to English -->
 <html lang="en">
 
 <head>
-    <!-- This sets the type of characters the page can use -->
     <meta charset="UTF-8">
-
-    <!-- This helps older versions of Internet Explorer display the page correctly -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- This makes the page fit nicely on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- This describes your website for search engines -->
+    <!-- Meta tags for search engines -->
     <meta name="description"
         content="Love Running. Club for runners in Dublin, Ireland. Urban running, trail running. Dublin docklands and Phoenix Park">
-
-    <!-- These are keywords to help search engines find your site -->
     <meta name="keywords" content="love running, run, running club, runners, Ireland, Dublin, sport, exercise">
-
-    <!-- This is the title that appears on the browser tab -->
+    <!-- Title -->
     <title>Love Running</title>
-
-    <!-- These lines load the small icons used for the browser tab and mobile devices -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-
-    <!-- This links your CSS file so the page uses your styles -->
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- This is the top section of the page (logo + navigation menu) -->
+    <!-- Header -->
     <header>
-
-        <!-- Clicking the logo sends the user back to the homepage -->
         <a href="index.html">
-            <!-- This is the main title/logo of the site -->
             <h1 id="logo">Love Running</h1>
         </a>
-
-        <!-- This is the hidden checkbox used to open/close the mobile menu -->
         <input type="checkbox" id="nav-toggle" name="nav-toggle">
-
-        <!-- This is the hamburger icon that users click on mobile -->
         <label for="nav-toggle" class="nav-toggle-label">
-            <i class="fa-solid fa-burger"></i>
+            <i class="fa-solid fa-bars"></i>
         </label>
-
-        <!-- This is the navigation menu -->
         <nav>
-            <!-- This is the list of menu links -->
             <ul id="menu">
-                <!-- This link goes to the homepage -->
                 <li><a href="index.html" class="active">Home</a></li>
-
-                <!-- This link goes to the gallery page -->
                 <li><a href="gallery.html">Gallery</a></li>
-
-                <!-- This link goes to the sign‑up page -->
                 <li><a href="signup.html">Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- This is the main content area of the page -->
+    <!-- Main content -->
     <main>
-
-        <!-- This is the hero section with the big background image -->
         <section id="hero">
-
-            <!-- This is the text box that sits on top of the hero image -->
             <div id="cover-text">
-                <!-- Big title inside the hero image -->
                 <h2>Love Running</h2>
-
-                <!-- Smaller subtitle inside the hero image -->
-                <h3>Dublin Docklands & Phonix Park</h3>
+                <h3>Dublin Docklands & Phoenix Park</h3>
             </div>
-
         </section>
-        <section id="reasons"><h2>Why Love Running With Us? <h/2></section>
+        <section id="reasons">
+            <h2>Why love running with us?</h2>
             <div id="benefits">
                 <div id="benefits-physical">
                     <div>
-                        <h3>FEEL HEALTHY <i class="fa-solid fa-heart-pulse"></i></h3>
+                        <h3>Feel healthy <i class="fa-solid fa-heart-pulse"></i></h3>
                         <hr>
-                        <p>Since it improves aerobic fitness, running is a great way to help improve your cardiovascular health. Plus, it burns calories and can build strength.</p>
-
+                        <p>Since it improves aerobic fitness, running is a great way to help improve your cardiovascular
+                            health. Plus, it burns calories and can build strength.</p>
                     </div>
-                    <div><h3>FEEL STRONG<i class="fa-solid fa-dumbbell"></i></h3>
+                    <div>
+                        <h3>Feel strong <i class="fa-solid fa-dumbbell"></i></h3>
                         <hr>
-                        <p>Running strengthens your heart by pumping blood more effectively through your body.</p></div>
+                        <p>Running strengthens your heart by pumping blood more effectively through your body.</p>
+                    </div>
                 </div>
                 <div id="benefits-mental">
-                    <div><h3>FEEl FREE<i class="fa-brands fa-fly"></i></h3>
+                    <div>
+                        <h3>Feel free <i class="fa-brands fa-fly"></i></h3>
                         <hr>
-                        <p>Physical exercise, running included, is known to release endorphins in the brain. Endorphins make you more energetic, more awake and, yes, happier.</p></div>
-                    <div><h3>GET SOCIAL<i class="fa-solid fa-globe"></i></h3>
+                        <p>Physical exercise, running included, is known to release endorphins in the brain. Endorphins
+                            make you more energetic, more awake and, yes, happier.</p>
+                    </div>
+                    <div>
+                        <h3>Get social <i class="fa-solid fa-globe"></i></h3>
                         <hr>
-                        <p>When we run with others, we can run farther and faster more easily. Social running can pull you out of a running funk or low mood, and inspire you to try new events.</p></div>
+                        <p>When we run with others, we can run farther and faster more easily. Social running can pull
+                            you out of a running funk or low mood, and inspire you to try new events.</p>
+                    </div>
                 </div>
                 <div id="benefits-image">
                     <div id="circle-cover-bg"></div>
                 </div>
             </div>
-        </main>
+        </section>
+    </main>
 
-    <!-- This is the footer at the bottom of the page -->
+    <!-- Footer -->
     <footer>
-
-        <!-- This is the list of social media icons -->
         <ul id="social-networks">
-
-            <!-- Facebook icon -->
             <li>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                   aria-label="Visit our facebook page(opens in a new tab)">
-                   <i class="fa-brands fa-facebook"></i>
-                </a>
+                    aria-label="Visit our Facebook page (opens in a new tab)">
+                    <i class="fa-brands fa-facebook"></i></a>
             </li>
-
-            <!-- Twitter icon -->
             <li>
-                <a href="https://www.twiter.com/" target="_blank" rel="noopener"
-                   aria-label="Visit our twiter page(opens in a new tab)">
-                   <i class="fa-brands fa-twitter"></i>
-                </a>
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page (opens in a new tab)">
+                    <i class="fa-brands fa-twitter-square"></i></a>
             </li>
-
-            <!-- YouTube icon -->
             <li>
                 <a href="https://www.youtube.com/" target="_blank" rel="noopener"
-                   aria-label="Visit our youtube page(opens in a new tab)">
-                   <i class="fa-brands fa-youtube"></i>
-                </a>
+                    aria-label="Visit our YouTube page (opens in a new tab)">
+                    <i class="fa-brands fa-youtube-square"></i></a>
             </li>
-
-            <!-- Instagram icon -->
             <li>
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                   aria-label="Visit our instagram page(opens in a new tab)">
-                   <i class="fa-brands fa-instagram"></i>
-                </a>
+                    aria-label="Visit our Instagram page (opens in a new tab)">
+                    <i class="fa-brands fa-instagram"></i></a>
             </li>
-
         </ul>
     </footer>
 
-    <!-- This loads the Font Awesome icons (the social icons and burger icon) -->
-    <script src="https://kit.fontawesome.com/2586be0006.js" crossorigin="anonymous"></script>
-
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
+
+</html>
