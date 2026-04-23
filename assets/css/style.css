@@ -182,7 +182,17 @@ main {
 #times h3{
     color: #fafafa;
 }
-
+/*Gallery page*/
+#photos img{
+    /* Images take all the width of the screen*/
+    width:100%;
+    /* Make space for the altenative text to stay readable*/
+    line-height: 1em;
+}
+#photos{
+    /*Remove space between images */
+    line-height: 0;
+}
 
 /* Footer */
 #social-networks {
